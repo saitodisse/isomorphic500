@@ -30,8 +30,8 @@ const IntlUtils = {
       // otherwise webpack will require the *complete* intl package (with all
       // the locales)
 
-      require.ensure(["intl/Intl"], (require) => {
-        const IntlPolyfill = require("intl/Intl");
+      require.ensure(["intl/dist/Intl"], (require) => {
+        const IntlPolyfill = require("intl/dist/Intl");
 
         Intl.NumberFormat = IntlPolyfill.NumberFormat;
         Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
