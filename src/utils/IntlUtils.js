@@ -31,11 +31,8 @@ const IntlUtils = {
       // the locales)
 
       require.ensure(["intl/dist/Intl"], (require) => {
-        const IntlPolyfill = require("intl/dist/Intl");
-
-        Intl.NumberFormat = IntlPolyfill.NumberFormat;
-        Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
-
+        window.Intl = require("intl/dist/Intl").Intl;
+        window.IntlPolyfill = require("intl/dist/Intl").IntlPolyfill;
         debug("Intl polyfill for %s has been loaded", locale);
 
         resolve();
